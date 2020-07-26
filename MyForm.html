@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form validation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center><h1 class="bg-dark text-white">Please Fill Your Details</h1></center>
+<form action="#" onsubmit="return validation()" class="bg-light">
+<div class="container">
+	<div class="form-group">
+         <input type="number" id="cid" class="form-control" placeholder="Customer ID" autocomplete="off">
+         <span id="cid1" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+         <input type="type" id="name" class="form-control" placeholder="Name" autocomplete="off">
+         <span id="name1" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+         <input type="number" id="phno" class="form-control" placeholder="Phone number" autocomplete="off">
+         <span id="phno1" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+         <input type="Email" id="cmail" class="form-control" placeholder="Email@Example.com" autocomplete="off">
+         <span id="cmail1" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+		<label>Address:</label>
+		<span id="add1" class="text-danger font-weight-bold"></span>
+         <textarea id="addrss" name="address">
+     </textarea>
+	</div>
+	<div class="form-group">
+		<h5>Select Your Gender below :</h5>
+		<label>Male</label>
+         <input type="radio" id="male" name="gender" value="male" checked="checked">
+         <label>Female</label>
+         <input type="radio" id="Female" name="gender" value="male">
+         <label>Other</label>
+         <input type="radio" id="other" name="gender" value="male">
+	</div>
+	<div class="form-group">
+         <input type="date" id="birthday" class="form-control" placeholder="Date Of Birth">
+         <span id="bday" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+		<input type="submit" name="submit" value="submit" class="btn-success">
+</div>
+<div class="form-group">
+<input type="reset" value="reset" class="btn-success">
+</div>
+</div>	
+</form>
+<script type="text/javascript">
+	function validation(){
+		var csid = document.getElementById('cid').value;
+		var name = document.getElementById('name').value;
+		var phno = document.getElementById('phno').value;
+		var cmail = document.getElementById('cmail').value;
+		var addrss = document.getElementById('addrss').value;
+		var birthday = document.getElementById('birthday').value;
+
+		if (csid=="") {
+           document.getElementById('cid1').innerHTML = " ** Please fill your ID";
+           return false;
+		}
+
+		if (name=="") {
+           document.getElementById('name1').innerHTML = " ** Please fill your name";
+           return false;
+		}
+		if ((name.length <= "2") || (name.length > "20")) {
+           document.getElementById('name1').innerHTML = " ** Your name must be in 3 to 20 characters";
+           return false;
+		}
+		if (!isNaN(name)) {
+           document.getElementById('name1').innerHTML = " ** Your name must be in character";
+           return false;
+		}
+
+		if (phno=="") {
+           document.getElementById('phno1').innerHTML = " ** Please Fill Your Phone no";
+           return false;
+		}
+		if (phno.length!=10) {
+           document.getElementById('phno1').innerHTML = " ** Phone no should ten digits";
+           return false;
+		}
+
+		if (cmail=="") {
+           document.getElementById('cmail1').innerHTML = " ** Please Fill Your Email";
+           return false;
+		}
+		if (cmail.indexOf('@') <= 0) {
+           document.getElementById('cmail1').innerHTML = " ** invalid @ position";
+           return false;
+		}
+		if ((cmail.charAt(cmail.length-4)!='.') && (cmail.charAt(cmail.length-3)!='.'))  {
+           document.getElementById('cmail1').innerHTML = " ** invalid (.) position";
+           return false;
+		}
+
+		if (addrss=="") {
+           document.getElementById('add1').innerHTML = " ** Please Fill Your Address";
+           return false;
+		}
+		if (birthday=="") {
+           document.getElementById('bday').innerHTML = " ** Please Fill Your Age";
+           return false;
+		}
+	}
+</script>
+</body>
+</html>

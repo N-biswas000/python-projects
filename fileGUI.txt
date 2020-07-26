@@ -1,0 +1,9 @@
+Niladri,22,niladri.bindas500@gmail.com,Male,Student,YES
+kaniska,33,kbose@gmail.com,Male,Student,YES
+Timir Hazra,22,Timir@gmail.com,Male,Student,YES
+Rohit,12,r.12@gmail.com,Male,Student,YES
+Tapan,56,tp@gmail.com,Male,Student,YES
+adsdf,23,fdsefsdf@gmail.com,Female,Professional,YES
+gfgdfgdx,12,hfhgdg@gmail.com,Female,Professional,YES
+adfse,24,fdsg@gmail.com,Female,Professional,YES
+akasg,27,dgsd@gmail.com,Female,Student,YES
